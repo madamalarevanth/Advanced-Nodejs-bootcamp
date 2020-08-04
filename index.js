@@ -1,8 +1,9 @@
 const cluster = require('cluster')
 
-console.log("is master: ",cluster.isMaster);
-
-const express = require('express')
+if(cluster.isMaster){
+    cluster.fork()
+}else{
+    const express = require('express')
 const app = express();
 
 function doWork(duration){
@@ -16,3 +17,4 @@ app.get('/',(req,res)=>{
     
 })
 app.listen(3000);
+}
