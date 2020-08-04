@@ -7,7 +7,7 @@ function doWork(duration){
 }
 
 app.get('/',(req,res)=>{
-    doWork(5000);
+    doWork(3000);
     res.send('Hi there');
     
 })
