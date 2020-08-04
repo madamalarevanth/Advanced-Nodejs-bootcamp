@@ -1,6 +1,6 @@
 const cluster = require('cluster')
 
-console.log(cluster.isMaster);
+console.log("is master: ",cluster.isMaster);
 
 const express = require('express')
 const app = express();
